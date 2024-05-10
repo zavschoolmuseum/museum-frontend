@@ -5,7 +5,7 @@ import "./App.css"
 
 function ReAdmin() {
   console.log(document.URL)
-  window.location.url = "https://dimasik911.pythonanywhere.com/admin/"
+  window.location.url = import.meta.env.VITE_BACKEND_ADMIN_PANEL
   return (
     <>
     </>
