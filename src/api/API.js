@@ -1,22 +1,6 @@
 export default class API {
   constructor() {
-    this.url = localStorage.getItem("backend-url")
-    let url_ = localStorage.getItem("backend-url-th")
-    if (!this.url || url_ === "0") {
-      if (!url_) localStorage.setItem("backend-url-th", "1")
-      let port = ''
-      if (import.meta.env.VITE_BACKEND_PORT != 0) port = `:${import.meta.env.VITE_BACKEND_PORT}`
-
-      this.url = (
-          import.meta.env.VITE_BACKEND_PROTOCOL +
-          import.meta.env.VITE_BACKEND_HOST +
-          port + "/" +
-          import.meta.env.VITE_BACKEND_API_PATH
-      )
-      localStorage.setItem("backend-url", this.url)
-    } else {
-      localStorage.setItem("backend-url-th", "0")
-    }
+    this.url = import.meta.env.VITE_BACKEND_HOST
   }
 
   request(
